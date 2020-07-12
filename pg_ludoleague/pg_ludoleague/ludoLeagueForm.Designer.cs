@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonR3 = new System.Windows.Forms.Button();
-            this.buttonR2 = new System.Windows.Forms.Button();
-            this.buttonR4 = new System.Windows.Forms.Button();
-            this.buttonR1 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.buttonY4 = new System.Windows.Forms.Button();
-            this.buttonY3 = new System.Windows.Forms.Button();
-            this.buttonY2 = new System.Windows.Forms.Button();
-            this.buttonY1 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.button49 = new System.Windows.Forms.Button();
             this.panelAH = new System.Windows.Forms.Panel();
@@ -58,12 +58,12 @@
             this.rectangleShape23 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape30 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape19 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeGH5 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH25 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape25 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeGH1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeGH2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeGH3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeGH4 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH21 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH22 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH23 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH24 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape31 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape26 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape27 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -75,11 +75,11 @@
             this.rectangleShape46 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape45 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape50 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeBH1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeBH2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeBH3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeBH4 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeBH5 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH11 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH12 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH13 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH14 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH15 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape51 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape52 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape39 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -88,11 +88,11 @@
             this.rectangleShape42 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape43 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape44 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeYH5 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeYH4 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeYH3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeYH2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeYH1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH45 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH44 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH43 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH42 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH41 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape38 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape32 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape33 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -105,11 +105,11 @@
             this.rectangleShape15 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape14 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape13 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeRH5 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeRH4 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeRH3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeRH2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShapeRH1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH35 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH34 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH33 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH32 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShapeH31 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape12 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape11 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape10 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -139,57 +139,57 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // buttonR3
+            // button33
             // 
-            this.buttonR3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonR3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonR3.Location = new System.Drawing.Point(198, 51);
-            this.buttonR3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonR3.Name = "buttonR3";
-            this.buttonR3.Size = new System.Drawing.Size(20, 20);
-            this.buttonR3.TabIndex = 78;
-            this.buttonR3.Text = "3";
-            this.buttonR3.UseVisualStyleBackColor = false;
+            this.button33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button33.Location = new System.Drawing.Point(170, 60);
+            this.button33.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(20, 20);
+            this.button33.TabIndex = 78;
+            this.button33.Text = "3";
+            this.button33.UseVisualStyleBackColor = false;
             // 
-            // buttonR2
+            // button32
             // 
-            this.buttonR2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonR2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonR2.Location = new System.Drawing.Point(59, 51);
-            this.buttonR2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonR2.Name = "buttonR2";
-            this.buttonR2.Size = new System.Drawing.Size(20, 20);
-            this.buttonR2.TabIndex = 79;
-            this.buttonR2.Text = "2";
-            this.buttonR2.UseVisualStyleBackColor = false;
+            this.button32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button32.Location = new System.Drawing.Point(50, 60);
+            this.button32.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(20, 20);
+            this.button32.TabIndex = 79;
+            this.button32.Text = "2";
+            this.button32.UseVisualStyleBackColor = false;
             // 
-            // buttonR4
+            // button34
             // 
-            this.buttonR4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonR4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonR4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonR4.Location = new System.Drawing.Point(200, 173);
-            this.buttonR4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonR4.Name = "buttonR4";
-            this.buttonR4.Size = new System.Drawing.Size(20, 20);
-            this.buttonR4.TabIndex = 83;
-            this.buttonR4.Text = "4";
-            this.buttonR4.UseVisualStyleBackColor = false;
+            this.button34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button34.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button34.Location = new System.Drawing.Point(170, 177);
+            this.button34.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(20, 20);
+            this.button34.TabIndex = 83;
+            this.button34.Text = "4";
+            this.button34.UseVisualStyleBackColor = false;
             // 
-            // buttonR1
+            // button31
             // 
-            this.buttonR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonR1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonR1.Location = new System.Drawing.Point(60, 171);
-            this.buttonR1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonR1.Name = "buttonR1";
-            this.buttonR1.Size = new System.Drawing.Size(20, 20);
-            this.buttonR1.TabIndex = 80;
-            this.buttonR1.Text = "1";
-            this.buttonR1.UseVisualStyleBackColor = false;
+            this.button31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button31.Location = new System.Drawing.Point(50, 179);
+            this.button31.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(20, 20);
+            this.button31.TabIndex = 80;
+            this.button31.Text = "1";
+            this.button31.UseVisualStyleBackColor = false;
             // 
             // button14
             // 
@@ -232,7 +232,7 @@
             this.button12.FlatAppearance.BorderSize = 2;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(50, 536);
+            this.button12.Location = new System.Drawing.Point(50, 541);
             this.button12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(20, 20);
@@ -259,125 +259,125 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.buttonAB_Click);
             // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.ForestGreen;
+            this.button24.Enabled = false;
+            this.button24.FlatAppearance.BorderSize = 2;
+            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Location = new System.Drawing.Point(417, 179);
+            this.button24.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(20, 20);
+            this.button24.TabIndex = 79;
+            this.button24.Text = "4";
+            this.button24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.buttonAB_Click);
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.ForestGreen;
+            this.button23.Enabled = false;
+            this.button23.FlatAppearance.BorderSize = 2;
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(540, 179);
+            this.button23.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(20, 20);
+            this.button23.TabIndex = 80;
+            this.button23.Text = "3";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.buttonAB_Click);
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.ForestGreen;
+            this.button22.Enabled = false;
+            this.button22.FlatAppearance.BorderSize = 2;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(540, 62);
+            this.button22.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(20, 20);
+            this.button22.TabIndex = 81;
+            this.button22.Text = "2";
+            this.button22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.buttonAB_Click);
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.ForestGreen;
+            this.button21.Enabled = false;
+            this.button21.FlatAppearance.BorderSize = 2;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(417, 62);
+            this.button21.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(20, 20);
+            this.button21.TabIndex = 82;
+            this.button21.Text = "1";
+            this.button21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.buttonAB_Click);
+            // 
             // button44
             // 
-            this.button44.BackColor = System.Drawing.Color.ForestGreen;
-            this.button44.Enabled = false;
-            this.button44.FlatAppearance.BorderSize = 2;
+            this.button44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button44.Location = new System.Drawing.Point(417, 179);
+            this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button44.Location = new System.Drawing.Point(417, 419);
             this.button44.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(20, 20);
-            this.button44.TabIndex = 79;
+            this.button44.TabIndex = 81;
             this.button44.Text = "4";
-            this.button44.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button44.UseVisualStyleBackColor = false;
-            this.button44.Click += new System.EventHandler(this.buttonAB_Click);
             // 
-            // button33
+            // button43
             // 
-            this.button33.BackColor = System.Drawing.Color.ForestGreen;
-            this.button33.Enabled = false;
-            this.button33.FlatAppearance.BorderSize = 2;
-            this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button33.Location = new System.Drawing.Point(537, 179);
-            this.button33.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(20, 20);
-            this.button33.TabIndex = 80;
-            this.button33.Text = "3";
-            this.button33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button33.UseVisualStyleBackColor = false;
-            this.button33.Click += new System.EventHandler(this.buttonAB_Click);
+            this.button43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button43.Location = new System.Drawing.Point(417, 541);
+            this.button43.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(20, 20);
+            this.button43.TabIndex = 82;
+            this.button43.Text = "3";
+            this.button43.UseVisualStyleBackColor = false;
             // 
-            // button32
+            // button42
             // 
-            this.button32.BackColor = System.Drawing.Color.ForestGreen;
-            this.button32.Enabled = false;
-            this.button32.FlatAppearance.BorderSize = 2;
-            this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button32.Location = new System.Drawing.Point(540, 62);
-            this.button32.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(20, 20);
-            this.button32.TabIndex = 81;
-            this.button32.Text = "2";
-            this.button32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button32.UseVisualStyleBackColor = false;
-            this.button32.Click += new System.EventHandler(this.buttonAB_Click);
+            this.button42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button42.Location = new System.Drawing.Point(540, 539);
+            this.button42.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(20, 20);
+            this.button42.TabIndex = 83;
+            this.button42.Text = "2";
+            this.button42.UseVisualStyleBackColor = false;
             // 
-            // button31
+            // button41
             // 
-            this.button31.BackColor = System.Drawing.Color.ForestGreen;
-            this.button31.Enabled = false;
-            this.button31.FlatAppearance.BorderSize = 2;
-            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button31.Location = new System.Drawing.Point(401, 62);
-            this.button31.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(20, 20);
-            this.button31.TabIndex = 82;
-            this.button31.Text = "1";
-            this.button31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button31.UseVisualStyleBackColor = false;
-            this.button31.Click += new System.EventHandler(this.buttonAB_Click);
-            // 
-            // buttonY4
-            // 
-            this.buttonY4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonY4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonY4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonY4.Location = new System.Drawing.Point(419, 419);
-            this.buttonY4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonY4.Name = "buttonY4";
-            this.buttonY4.Size = new System.Drawing.Size(20, 20);
-            this.buttonY4.TabIndex = 81;
-            this.buttonY4.Text = "4";
-            this.buttonY4.UseVisualStyleBackColor = false;
-            // 
-            // buttonY3
-            // 
-            this.buttonY3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonY3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonY3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonY3.Location = new System.Drawing.Point(419, 539);
-            this.buttonY3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonY3.Name = "buttonY3";
-            this.buttonY3.Size = new System.Drawing.Size(20, 20);
-            this.buttonY3.TabIndex = 82;
-            this.buttonY3.Text = "3";
-            this.buttonY3.UseVisualStyleBackColor = false;
-            // 
-            // buttonY2
-            // 
-            this.buttonY2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonY2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonY2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonY2.Location = new System.Drawing.Point(539, 539);
-            this.buttonY2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonY2.Name = "buttonY2";
-            this.buttonY2.Size = new System.Drawing.Size(20, 20);
-            this.buttonY2.TabIndex = 83;
-            this.buttonY2.Text = "2";
-            this.buttonY2.UseVisualStyleBackColor = false;
-            // 
-            // buttonY1
-            // 
-            this.buttonY1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonY1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonY1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonY1.Location = new System.Drawing.Point(539, 419);
-            this.buttonY1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonY1.Name = "buttonY1";
-            this.buttonY1.Size = new System.Drawing.Size(20, 20);
-            this.buttonY1.TabIndex = 78;
-            this.buttonY1.Text = "1";
-            this.buttonY1.UseVisualStyleBackColor = false;
+            this.button41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button41.Location = new System.Drawing.Point(540, 419);
+            this.button41.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(20, 20);
+            this.button41.TabIndex = 78;
+            this.button41.Text = "1";
+            this.button41.UseVisualStyleBackColor = false;
             // 
             // button36
             // 
@@ -417,7 +417,7 @@
             // 
             this.btnROLL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnROLL.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnROLL.Location = new System.Drawing.Point(674, 354);
+            this.btnROLL.Location = new System.Drawing.Point(662, 110);
             this.btnROLL.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnROLL.Name = "btnROLL";
             this.btnROLL.Size = new System.Drawing.Size(111, 40);
@@ -429,15 +429,14 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(677, 275);
+            this.textBox1.Location = new System.Drawing.Point(665, 31);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 84;
-            this.textBox1.Visible = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(677, 305);
+            this.textBox2.Location = new System.Drawing.Point(665, 61);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 85;
@@ -456,12 +455,12 @@
             this.rectangleShape23,
             this.rectangleShape30,
             this.rectangleShape19,
-            this.rectangleShapeGH5,
+            this.rectangleShapeH25,
             this.rectangleShape25,
-            this.rectangleShapeGH1,
-            this.rectangleShapeGH2,
-            this.rectangleShapeGH3,
-            this.rectangleShapeGH4,
+            this.rectangleShapeH21,
+            this.rectangleShapeH22,
+            this.rectangleShapeH23,
+            this.rectangleShapeH24,
             this.rectangleShape31,
             this.rectangleShape26,
             this.rectangleShape27,
@@ -473,11 +472,11 @@
             this.rectangleShape46,
             this.rectangleShape45,
             this.rectangleShape50,
-            this.rectangleShapeBH1,
-            this.rectangleShapeBH2,
-            this.rectangleShapeBH3,
-            this.rectangleShapeBH4,
-            this.rectangleShapeBH5,
+            this.rectangleShapeH11,
+            this.rectangleShapeH12,
+            this.rectangleShapeH13,
+            this.rectangleShapeH14,
+            this.rectangleShapeH15,
             this.rectangleShape51,
             this.rectangleShape52,
             this.rectangleShape39,
@@ -486,11 +485,11 @@
             this.rectangleShape42,
             this.rectangleShape43,
             this.rectangleShape44,
-            this.rectangleShapeYH5,
-            this.rectangleShapeYH4,
-            this.rectangleShapeYH3,
-            this.rectangleShapeYH2,
-            this.rectangleShapeYH1,
+            this.rectangleShapeH45,
+            this.rectangleShapeH44,
+            this.rectangleShapeH43,
+            this.rectangleShapeH42,
+            this.rectangleShapeH41,
             this.rectangleShape38,
             this.rectangleShape32,
             this.rectangleShape33,
@@ -503,11 +502,11 @@
             this.rectangleShape15,
             this.rectangleShape14,
             this.rectangleShape13,
-            this.rectangleShapeRH5,
-            this.rectangleShapeRH4,
-            this.rectangleShapeRH3,
-            this.rectangleShapeRH2,
-            this.rectangleShapeRH1,
+            this.rectangleShapeH35,
+            this.rectangleShapeH34,
+            this.rectangleShapeH33,
+            this.rectangleShapeH32,
+            this.rectangleShapeH31,
             this.rectangleShape12,
             this.rectangleShape11,
             this.rectangleShape10,
@@ -551,6 +550,7 @@
             this.rectangleShapeBorder.Location = new System.Drawing.Point(705, 11);
             this.rectangleShapeBorder.Name = "rectangleShapeBorder";
             this.rectangleShapeBorder.Size = new System.Drawing.Size(602, 602);
+            this.rectangleShapeBorder.Visible = false;
             // 
             // rectangleShape20
             // 
@@ -587,13 +587,13 @@
             this.rectangleShape19.Name = "rectangleShape19";
             this.rectangleShape19.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeGH5
+            // rectangleShapeH25
             // 
-            this.rectangleShapeGH5.BackColor = System.Drawing.Color.ForestGreen;
-            this.rectangleShapeGH5.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeGH5.Location = new System.Drawing.Point(290, 210);
-            this.rectangleShapeGH5.Name = "rectangleShapeGH5";
-            this.rectangleShapeGH5.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH25.BackColor = System.Drawing.Color.ForestGreen;
+            this.rectangleShapeH25.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH25.Location = new System.Drawing.Point(290, 210);
+            this.rectangleShapeH25.Name = "rectangleShapeH25";
+            this.rectangleShapeH25.Size = new System.Drawing.Size(40, 40);
             // 
             // rectangleShape25
             // 
@@ -602,37 +602,37 @@
             this.rectangleShape25.Name = "rectangleShape25";
             this.rectangleShape25.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeGH1
+            // rectangleShapeH21
             // 
-            this.rectangleShapeGH1.BackColor = System.Drawing.Color.ForestGreen;
-            this.rectangleShapeGH1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeGH1.Location = new System.Drawing.Point(290, 50);
-            this.rectangleShapeGH1.Name = "rectangleShapeGH1";
-            this.rectangleShapeGH1.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH21.BackColor = System.Drawing.Color.ForestGreen;
+            this.rectangleShapeH21.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH21.Location = new System.Drawing.Point(290, 50);
+            this.rectangleShapeH21.Name = "rectangleShapeH21";
+            this.rectangleShapeH21.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeGH2
+            // rectangleShapeH22
             // 
-            this.rectangleShapeGH2.BackColor = System.Drawing.Color.ForestGreen;
-            this.rectangleShapeGH2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeGH2.Location = new System.Drawing.Point(290, 90);
-            this.rectangleShapeGH2.Name = "rectangleShapeGH2";
-            this.rectangleShapeGH2.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH22.BackColor = System.Drawing.Color.ForestGreen;
+            this.rectangleShapeH22.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH22.Location = new System.Drawing.Point(290, 90);
+            this.rectangleShapeH22.Name = "rectangleShapeH22";
+            this.rectangleShapeH22.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeGH3
+            // rectangleShapeH23
             // 
-            this.rectangleShapeGH3.BackColor = System.Drawing.Color.ForestGreen;
-            this.rectangleShapeGH3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeGH3.Location = new System.Drawing.Point(290, 130);
-            this.rectangleShapeGH3.Name = "rectangleShapeGH3";
-            this.rectangleShapeGH3.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH23.BackColor = System.Drawing.Color.ForestGreen;
+            this.rectangleShapeH23.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH23.Location = new System.Drawing.Point(290, 130);
+            this.rectangleShapeH23.Name = "rectangleShapeH23";
+            this.rectangleShapeH23.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeGH4
+            // rectangleShapeH24
             // 
-            this.rectangleShapeGH4.BackColor = System.Drawing.Color.ForestGreen;
-            this.rectangleShapeGH4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeGH4.Location = new System.Drawing.Point(290, 170);
-            this.rectangleShapeGH4.Name = "rectangleShapeGH4";
-            this.rectangleShapeGH4.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH24.BackColor = System.Drawing.Color.ForestGreen;
+            this.rectangleShapeH24.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH24.Location = new System.Drawing.Point(290, 170);
+            this.rectangleShapeH24.Name = "rectangleShapeH24";
+            this.rectangleShapeH24.Size = new System.Drawing.Size(40, 40);
             // 
             // rectangleShape31
             // 
@@ -712,45 +712,45 @@
             this.rectangleShape50.Name = "rectangleShape50";
             this.rectangleShape50.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeBH1
+            // rectangleShapeH11
             // 
-            this.rectangleShapeBH1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.rectangleShapeBH1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeBH1.Location = new System.Drawing.Point(290, 530);
-            this.rectangleShapeBH1.Name = "rectangleShapeBH1";
-            this.rectangleShapeBH1.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH11.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rectangleShapeH11.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH11.Location = new System.Drawing.Point(290, 530);
+            this.rectangleShapeH11.Name = "rectangleShapeH11";
+            this.rectangleShapeH11.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeBH2
+            // rectangleShapeH12
             // 
-            this.rectangleShapeBH2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.rectangleShapeBH2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeBH2.Location = new System.Drawing.Point(290, 490);
-            this.rectangleShapeBH2.Name = "rectangleShapeBH2";
-            this.rectangleShapeBH2.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH12.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rectangleShapeH12.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH12.Location = new System.Drawing.Point(290, 490);
+            this.rectangleShapeH12.Name = "rectangleShapeH12";
+            this.rectangleShapeH12.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeBH3
+            // rectangleShapeH13
             // 
-            this.rectangleShapeBH3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.rectangleShapeBH3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeBH3.Location = new System.Drawing.Point(290, 450);
-            this.rectangleShapeBH3.Name = "rectangleShapeBH3";
-            this.rectangleShapeBH3.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH13.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rectangleShapeH13.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH13.Location = new System.Drawing.Point(290, 450);
+            this.rectangleShapeH13.Name = "rectangleShapeH13";
+            this.rectangleShapeH13.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeBH4
+            // rectangleShapeH14
             // 
-            this.rectangleShapeBH4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.rectangleShapeBH4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeBH4.Location = new System.Drawing.Point(290, 410);
-            this.rectangleShapeBH4.Name = "rectangleShapeBH4";
-            this.rectangleShapeBH4.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH14.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rectangleShapeH14.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH14.Location = new System.Drawing.Point(290, 410);
+            this.rectangleShapeH14.Name = "rectangleShapeH14";
+            this.rectangleShapeH14.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeBH5
+            // rectangleShapeH15
             // 
-            this.rectangleShapeBH5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.rectangleShapeBH5.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeBH5.Location = new System.Drawing.Point(290, 370);
-            this.rectangleShapeBH5.Name = "rectangleShapeBH5";
-            this.rectangleShapeBH5.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH15.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rectangleShapeH15.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH15.Location = new System.Drawing.Point(290, 370);
+            this.rectangleShapeH15.Name = "rectangleShapeH15";
+            this.rectangleShapeH15.Size = new System.Drawing.Size(40, 40);
             // 
             // rectangleShape51
             // 
@@ -809,45 +809,45 @@
             this.rectangleShape44.Name = "rectangleShape44";
             this.rectangleShape44.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeYH5
+            // rectangleShapeH45
             // 
-            this.rectangleShapeYH5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rectangleShapeYH5.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeYH5.Location = new System.Drawing.Point(370, 290);
-            this.rectangleShapeYH5.Name = "rectangleShapeYH5";
-            this.rectangleShapeYH5.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH45.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH45.Location = new System.Drawing.Point(370, 290);
+            this.rectangleShapeH45.Name = "rectangleShapeH45";
+            this.rectangleShapeH45.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeYH4
+            // rectangleShapeH44
             // 
-            this.rectangleShapeYH4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rectangleShapeYH4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeYH4.Location = new System.Drawing.Point(410, 290);
-            this.rectangleShapeYH4.Name = "rectangleShapeYH4";
-            this.rectangleShapeYH4.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH44.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH44.Location = new System.Drawing.Point(410, 290);
+            this.rectangleShapeH44.Name = "rectangleShapeH44";
+            this.rectangleShapeH44.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeYH3
+            // rectangleShapeH43
             // 
-            this.rectangleShapeYH3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rectangleShapeYH3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeYH3.Location = new System.Drawing.Point(450, 290);
-            this.rectangleShapeYH3.Name = "rectangleShapeYH3";
-            this.rectangleShapeYH3.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH43.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH43.Location = new System.Drawing.Point(450, 290);
+            this.rectangleShapeH43.Name = "rectangleShapeH43";
+            this.rectangleShapeH43.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeYH2
+            // rectangleShapeH42
             // 
-            this.rectangleShapeYH2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rectangleShapeYH2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeYH2.Location = new System.Drawing.Point(490, 290);
-            this.rectangleShapeYH2.Name = "rectangleShapeYH2";
-            this.rectangleShapeYH2.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH42.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH42.Location = new System.Drawing.Point(490, 290);
+            this.rectangleShapeH42.Name = "rectangleShapeH42";
+            this.rectangleShapeH42.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeYH1
+            // rectangleShapeH41
             // 
-            this.rectangleShapeYH1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rectangleShapeYH1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeYH1.Location = new System.Drawing.Point(530, 290);
-            this.rectangleShapeYH1.Name = "rectangleShapeYH1";
-            this.rectangleShapeYH1.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH41.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH41.Location = new System.Drawing.Point(530, 290);
+            this.rectangleShapeH41.Name = "rectangleShapeH41";
+            this.rectangleShapeH41.Size = new System.Drawing.Size(40, 40);
             // 
             // rectangleShape38
             // 
@@ -934,50 +934,50 @@
             this.rectangleShape13.Name = "rectangleShape13";
             this.rectangleShape13.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeRH5
+            // rectangleShapeH35
             // 
-            this.rectangleShapeRH5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rectangleShapeRH5.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeRH5.BorderColor = System.Drawing.Color.Black;
-            this.rectangleShapeRH5.Location = new System.Drawing.Point(210, 290);
-            this.rectangleShapeRH5.Name = "rectangleShapeRH5";
-            this.rectangleShapeRH5.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH35.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH35.BorderColor = System.Drawing.Color.Black;
+            this.rectangleShapeH35.Location = new System.Drawing.Point(210, 290);
+            this.rectangleShapeH35.Name = "rectangleShapeH35";
+            this.rectangleShapeH35.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeRH4
+            // rectangleShapeH34
             // 
-            this.rectangleShapeRH4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rectangleShapeRH4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeRH4.BorderColor = System.Drawing.Color.Black;
-            this.rectangleShapeRH4.Location = new System.Drawing.Point(170, 290);
-            this.rectangleShapeRH4.Name = "rectangleShapeRH4";
-            this.rectangleShapeRH4.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH34.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH34.BorderColor = System.Drawing.Color.Black;
+            this.rectangleShapeH34.Location = new System.Drawing.Point(170, 290);
+            this.rectangleShapeH34.Name = "rectangleShapeH34";
+            this.rectangleShapeH34.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeRH3
+            // rectangleShapeH33
             // 
-            this.rectangleShapeRH3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rectangleShapeRH3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeRH3.BorderColor = System.Drawing.Color.Black;
-            this.rectangleShapeRH3.Location = new System.Drawing.Point(130, 290);
-            this.rectangleShapeRH3.Name = "rectangleShapeRH3";
-            this.rectangleShapeRH3.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH33.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH33.BorderColor = System.Drawing.Color.Black;
+            this.rectangleShapeH33.Location = new System.Drawing.Point(130, 290);
+            this.rectangleShapeH33.Name = "rectangleShapeH33";
+            this.rectangleShapeH33.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeRH2
+            // rectangleShapeH32
             // 
-            this.rectangleShapeRH2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rectangleShapeRH2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeRH2.BorderColor = System.Drawing.Color.Black;
-            this.rectangleShapeRH2.Location = new System.Drawing.Point(90, 290);
-            this.rectangleShapeRH2.Name = "rectangleShapeRH2";
-            this.rectangleShapeRH2.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH32.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH32.BorderColor = System.Drawing.Color.Black;
+            this.rectangleShapeH32.Location = new System.Drawing.Point(90, 290);
+            this.rectangleShapeH32.Name = "rectangleShapeH32";
+            this.rectangleShapeH32.Size = new System.Drawing.Size(40, 40);
             // 
-            // rectangleShapeRH1
+            // rectangleShapeH31
             // 
-            this.rectangleShapeRH1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rectangleShapeRH1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShapeRH1.BorderColor = System.Drawing.Color.Black;
-            this.rectangleShapeRH1.Location = new System.Drawing.Point(50, 290);
-            this.rectangleShapeRH1.Name = "rectangleShapeRH1";
-            this.rectangleShapeRH1.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShapeH31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rectangleShapeH31.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShapeH31.BorderColor = System.Drawing.Color.Black;
+            this.rectangleShapeH31.Location = new System.Drawing.Point(50, 290);
+            this.rectangleShapeH31.Name = "rectangleShapeH31";
+            this.rectangleShapeH31.Size = new System.Drawing.Size(40, 40);
             // 
             // rectangleShape12
             // 
@@ -1202,14 +1202,14 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(624, 400);
+            this.textBox3.Location = new System.Drawing.Point(624, 263);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(214, 198);
+            this.textBox3.Size = new System.Drawing.Size(214, 335);
             this.textBox3.TabIndex = 89;
             // 
-            // Form1
+            // ludoLeagueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1218,53 +1218,55 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonY4);
-            this.Controls.Add(this.buttonY3);
-            this.Controls.Add(this.buttonY2);
-            this.Controls.Add(this.button14);
             this.Controls.Add(this.button44);
+            this.Controls.Add(this.button43);
+            this.Controls.Add(this.button42);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.button24);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button33);
+            this.Controls.Add(this.button23);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button22);
             this.Controls.Add(this.button32);
-            this.Controls.Add(this.buttonR2);
             this.Controls.Add(this.panelAH);
-            this.Controls.Add(this.buttonR3);
-            this.Controls.Add(this.buttonR1);
+            this.Controls.Add(this.button33);
             this.Controls.Add(this.button31);
-            this.Controls.Add(this.buttonY1);
+            this.Controls.Add(this.button21);
+            this.Controls.Add(this.button41);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.buttonR4);
+            this.Controls.Add(this.button34);
             this.Controls.Add(this.btnROLL);
             this.Controls.Add(this.button49);
             this.Controls.Add(this.button36);
             this.Controls.Add(this.shapeContainer1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.Name = "ludoLeagueForm";
+            this.Load += new System.EventHandler(this.ludoLeagueForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonR4;
-        private System.Windows.Forms.Button buttonR3;
-        private System.Windows.Forms.Button buttonR2;
-        private System.Windows.Forms.Button buttonR1;
+        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button44;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button buttonY4;
-        private System.Windows.Forms.Button buttonY3;
-        private System.Windows.Forms.Button buttonY2;
-        private System.Windows.Forms.Button buttonY1;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button36;
         private System.Windows.Forms.Button button49;
         private System.Windows.Forms.Panel panelAH;
@@ -1300,12 +1302,12 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape23;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape30;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape19;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeGH5;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH25;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape25;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeGH1;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeGH2;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeGH3;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeGH4;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH21;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH22;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH23;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH24;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape31;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape26;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape27;
@@ -1317,11 +1319,11 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape46;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape45;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape50;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeBH1;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeBH2;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeBH3;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeBH4;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeBH5;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH11;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH12;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH13;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH14;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH15;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape51;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape52;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape39;
@@ -1330,11 +1332,11 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape42;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape43;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape44;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeYH5;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeYH4;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeYH3;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeYH2;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeYH1;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH45;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH44;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH43;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH42;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH41;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape38;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape32;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape33;
@@ -1347,11 +1349,11 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape15;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape14;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape13;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeRH5;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeRH4;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeRH3;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeRH2;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeRH1;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH35;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH34;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH33;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH32;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeH31;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape12;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShapeBorder;
         private System.Windows.Forms.Button button1;
