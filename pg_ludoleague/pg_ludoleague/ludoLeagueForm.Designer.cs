@@ -579,6 +579,7 @@
             this.rectangleShape30.Location = new System.Drawing.Point(330, 170);
             this.rectangleShape30.Name = "rectangleShape30";
             this.rectangleShape30.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape30.Visible = false;
             // 
             // rectangleShape19
             // 
@@ -640,6 +641,7 @@
             this.rectangleShape31.Location = new System.Drawing.Point(330, 210);
             this.rectangleShape31.Name = "rectangleShape31";
             this.rectangleShape31.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape31.Visible = false;
             // 
             // rectangleShape26
             // 
@@ -662,6 +664,7 @@
             this.rectangleShape28.Location = new System.Drawing.Point(330, 90);
             this.rectangleShape28.Name = "rectangleShape28";
             this.rectangleShape28.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape28.Visible = false;
             // 
             // rectangleShape29
             // 
@@ -669,6 +672,7 @@
             this.rectangleShape29.Location = new System.Drawing.Point(330, 130);
             this.rectangleShape29.Name = "rectangleShape29";
             this.rectangleShape29.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape29.Visible = false;
             // 
             // rectangleShape24
             // 
@@ -862,6 +866,7 @@
             this.rectangleShape32.Location = new System.Drawing.Point(370, 250);
             this.rectangleShape32.Name = "rectangleShape32";
             this.rectangleShape32.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape32.Visible = false;
             // 
             // rectangleShape33
             // 
@@ -869,6 +874,7 @@
             this.rectangleShape33.Location = new System.Drawing.Point(410, 250);
             this.rectangleShape33.Name = "rectangleShape33";
             this.rectangleShape33.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape33.Visible = false;
             // 
             // rectangleShape34
             // 
@@ -876,6 +882,7 @@
             this.rectangleShape34.Location = new System.Drawing.Point(450, 250);
             this.rectangleShape34.Name = "rectangleShape34";
             this.rectangleShape34.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape34.Visible = false;
             // 
             // rectangleShape36
             // 
@@ -1020,6 +1027,7 @@
             this.rectangleShape6.Location = new System.Drawing.Point(210, 330);
             this.rectangleShape6.Name = "rectangleShape6";
             this.rectangleShape6.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape6.Visible = false;
             // 
             // rectangleShape5
             // 
@@ -1027,6 +1035,7 @@
             this.rectangleShape5.Location = new System.Drawing.Point(250, 370);
             this.rectangleShape5.Name = "rectangleShape5";
             this.rectangleShape5.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape5.Visible = false;
             // 
             // rectangleShape4
             // 
@@ -1034,6 +1043,7 @@
             this.rectangleShape4.Location = new System.Drawing.Point(250, 410);
             this.rectangleShape4.Name = "rectangleShape4";
             this.rectangleShape4.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape4.Visible = false;
             // 
             // rectangleShape3
             // 
@@ -1041,6 +1051,7 @@
             this.rectangleShape3.Location = new System.Drawing.Point(250, 450);
             this.rectangleShape3.Name = "rectangleShape3";
             this.rectangleShape3.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape3.Visible = false;
             // 
             // rectangleShape2
             // 
@@ -1048,6 +1059,7 @@
             this.rectangleShape2.Location = new System.Drawing.Point(250, 490);
             this.rectangleShape2.Name = "rectangleShape2";
             this.rectangleShape2.Size = new System.Drawing.Size(40, 40);
+            this.rectangleShape2.Visible = false;
             // 
             // rectangleShape1
             // 

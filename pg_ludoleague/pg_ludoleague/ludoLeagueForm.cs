@@ -8,54 +8,68 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.PowerPacks;
+using System.Threading;
 
 namespace pg_ludoleague
 {
     public partial class ludoLeagueForm : Form
     {
-     //ROLL = 1, Blue, Red, Green, Yellow
-        int mode = 0;// 2 Player mode //TODO Recheck
+        //The current config. A 2-player or 4-player game. //TODO
+        int numOfPlayers = Configuration.currentPlayerCountConfig;
+
+        //Sequence of jumping b/w colors while making moves.
         int[] moveSequence = new int[Configuration.currentPlayerCountConfig];
 
-        //path[] rpath = new path[57]; path[] bpath = new path[57]; path[] gpath = new path[57]; path[] ypath = new path[57];    //path[] apath = new path[57];
-        path[][] pathVars;
+        //This is the path that every bead will take while moving on the board
+        Path[][] pathVars;
 
-        //Button[] R = new Button[5];     Button[] B = new Button[5];     Button[] Y = new Button[5];     Button[] G = new Button[5];
-        Button[][] BeadVars;
+        //The bead(s), 4 of each color
+        Button[][] beadBtnVars;
 
-        //bead[] bbead = new bead[5]; bead[] gbead = new bead[5];
-        bead[][] beadVars;
+        //The bead Class object for the beads
+        Bead[][] beadVars;
 
-        Microsoft.VisualBasic.PowerPacks.OvalShape[] OS = new Microsoft.VisualBasic.PowerPacks.OvalShape[9];
+        //The dice design
+        Microsoft.VisualBasic.PowerPacks.OvalShape[] diceBeads = new Microsoft.VisualBasic.PowerPacks.OvalShape[9];
 
+        //indicator for if its first ever move for any colored-bead (once per color)
         int[] fmove = new int[5];
 
-        Random Q;
+        //Used for generating diceValues on each diceRoll
+        Random diceValueRandomVar;
+        int currentDiceValue = 0;
 
-        int Val = 0, ROLL = -1, dr = 1,osl = 0;
+        int diceRoll = -1, dr = 1,osl = 0;
 
-        //int numbbeadsopen = 0, numgbeadsopen = 0, numrbeadsopen = 0, numybeadsopen = 0;
+        //Used for maintaining number of open beads, 1 entry for each color
         int[] numbeadsopen;
 
+        //UI element for the path Stepping stones
         RectangleShape[] movePath = new RectangleShape[53];
 
-        //RectangleShape[] redMovePath = new RectangleShape[6]; RectangleShape[] greenMovePath = new RectangleShape[6]; RectangleShape[] yellowMovePath = new RectangleShape[6]; RectangleShape[] blueMovePath = new RectangleShape[6];
         RectangleShape[][] colorSpMovePath = new RectangleShape[4][];
 
         int[] map = new int[Configuration.currentPlayerCountConfig + 1];
 
-        int[] diffs = new int[] { 0,0,27,14,40};
+        //used for setting path track
+        int[] diffs = new int[] { 0,0,27,14,40};//DO Not Change these Values
 
         public ludoLeagueForm()
         {
             InitializeComponent();
+            initializeGame();
+        }
 
-            //initialize Color Paths.
-            for(int ival = 1; ival <= (Configuration.currentPlayerCountConfig); ival++)
-            //foreach (int ival in Configuration.playerColorConfigs[Configuration.currentPlayerCountConfig])
+        /**
+         * Method to initialize New Game
+         * */
+        private void initializeGame()
+        {
+            //initialize Path(s).
+            for (int ival = 1; ival <= numOfPlayers; ival++)
             {
                 map[ival] = new int();
-                map[ival] = Configuration.playerColorConfigs[Configuration.currentPlayerCountConfig][ival];
+                map[ival] = Configuration.playerColorConfigs[numOfPlayers][ival];
 
                 //map[1] //First Color
                 //map[2] //SecondColor
@@ -63,41 +77,40 @@ namespace pg_ludoleague
             }
 
             //path[][] pathVars;
-            pathVars = new path[Configuration.currentPlayerCountConfig + 1][];
+            pathVars = new Path[numOfPlayers + 1][];
 
             //Button[][] Bead;
-            BeadVars = new Button[Configuration.currentPlayerCountConfig + 1][];
-
+            beadBtnVars = new Button[numOfPlayers + 1][];
 
             //bead[][] beadVars;
-            beadVars = new bead[Configuration.currentPlayerCountConfig + 1][];
+            beadVars = new Bead[numOfPlayers + 1][];
 
             //int[] numbeadopen;
-            numbeadsopen = new int[Configuration.currentPlayerCountConfig + 1];
+            numbeadsopen = new int[numOfPlayers + 1];
 
-            colorSpMovePath = new RectangleShape[Configuration.currentPlayerCountConfig + 1][];
-            for (int ival = 1; ival <= (Configuration.currentPlayerCountConfig); ival++)
+            colorSpMovePath = new RectangleShape[numOfPlayers + 1][];
+            for (int ival = 1; ival <= (numOfPlayers); ival++)
             {
                 colorSpMovePath[ival] = new RectangleShape[6]; //which Color = map[ivar];
-                beadVars[ival] = new bead[5];
-                BeadVars[ival] = new Button[5];
-                pathVars[ival] = new path[57];
+                beadVars[ival] = new Bead[5];
+                beadBtnVars[ival] = new Button[5];
+                pathVars[ival] = new Path[57];
             }
 
 
-            for (int ivar = 1; ivar <= Configuration.currentPlayerCountConfig; ivar++)
+            for (int ivar = 1; ivar <= numOfPlayers; ivar++)
             {
                 for (int jvar = 1; jvar <= 56; jvar++)
                 {
-                    pathVars[ivar][jvar] = new path();
+                    pathVars[ivar][jvar] = new Path();
                 }
             }
-            for (int ivar = 1; ivar <= Configuration.currentPlayerCountConfig; ivar++)
+            for (int ivar = 1; ivar <= numOfPlayers; ivar++)
             {
-                OS[ivar - 1] = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-                OS[4 + ivar - 1] = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+                diceBeads[ivar - 1] = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+                diceBeads[4 + ivar - 1] = new Microsoft.VisualBasic.PowerPacks.OvalShape();
 
-                if (Configuration.currentPlayerCountConfig == 4)
+                if (numOfPlayers == 2)
                 {
                     if (ivar >= 3)
                     {
@@ -106,9 +119,9 @@ namespace pg_ludoleague
                 }
                 for (int jvar = 1; jvar <= 4; jvar++)
                 {
-                    BeadVars[ivar][jvar] = new Button();
-                    BeadVars[ivar][jvar] = (Button)Controls["button" + ivar + "" + jvar];
-                    beadVars[ivar][jvar] = new bead();
+                    beadBtnVars[ivar][jvar] = new Button();
+                    beadBtnVars[ivar][jvar] = (Button)Controls["button" + ivar + "" + jvar];
+                    beadVars[ivar][jvar] = new Bead();
                     colorSpMovePath[ivar][jvar] = new RectangleShape();
                 }
                 numbeadsopen[ivar] = new int();
@@ -116,67 +129,68 @@ namespace pg_ludoleague
                 colorSpMovePath[ivar][5] = new RectangleShape();
                 fmove[ivar] = 0;
             }
-            OS[8] = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            diceBeads[8] = new Microsoft.VisualBasic.PowerPacks.OvalShape();
         }
 
         private void ludoLeagueForm_Load(object sender, EventArgs e)
         {
-            //R[1].BringToFront();
+            formLoad();
+        }
+
+        /**
+         * Method for tasks to do while on FormLoad();
+         * */
+        private void formLoad()
+        {
             rectangleShapeDice.SendToBack();
 
-            for (int mvar = 1; mvar <= 52;)
+            for (int mvar = 1; mvar <= 52; )
             {
                 movePath[mvar] = new RectangleShape();
                 int rs_index = shapeContainer1.Shapes.IndexOfKey("rectangleShape" + mvar);
                 if (rs_index != -1)
                 {
                     movePath[mvar] = (RectangleShape)shapeContainer1.Shapes.get_Item(rs_index);
-                    if(!(movePath[mvar] == null))
+                    if (!(movePath[mvar] == null))
                     {
-                        if ((Configuration.currentPlayerCountConfig == 2) || (Configuration.currentPlayerCountConfig == 4))
+                        if ((numOfPlayers == 2) || (numOfPlayers == 4))
                         {
                             pathVars[1][mvar].x = movePath[mvar].Left;// - 1
-                            pathVars[1][mvar].y = movePath[mvar].Top; // - 1																																
+                            pathVars[1][mvar].y = movePath[mvar].Top; // - 1
                         }
 
-                        for (int ivar = 2; ivar <= 4;ivar++ )
+                        for (int ivar = 2; ivar <= 4; ivar++)
                         {
                             if (ivar == 3 || ivar == 4)
                             {
-                                if ((Configuration.currentPlayerCountConfig == 2))
+                                if ((numOfPlayers == 2))
                                 {
                                     continue;
                                 }
                             }
                             if (mvar < diffs[ivar])
                             {
-                                //if ((Configuration.currentPlayerCountConfig == 4))
-                                //{
-                                    pathVars[ivar][mvar + (52 - diffs[ivar])].x = movePath[mvar].Left;
-                                    pathVars[ivar][mvar + (52 - diffs[ivar])].y = movePath[mvar].Top;
-                                //}
+                                pathVars[ivar][mvar + (52 - diffs[ivar])].x = movePath[mvar].Left;
+                                pathVars[ivar][mvar + (52 - diffs[ivar])].y = movePath[mvar].Top;
                             }
                             else
                             {
-                                //if ((Configuration.currentPlayerCountConfig == 4))
-                                //{
-                                    pathVars[ivar][mvar - diffs[ivar] + 1].x = movePath[mvar].Left;
-                                    pathVars[ivar][mvar - diffs[ivar] + 1].y = movePath[mvar].Top;
-                                //}
+                                pathVars[ivar][mvar - diffs[ivar] + 1].x = movePath[mvar].Left;
+                                pathVars[ivar][mvar - diffs[ivar] + 1].y = movePath[mvar].Top;
                             }
                         }
                     }
                 }
                 mvar++;
             }
-            
+
             for (int mvar = 1; mvar <= 5; )
             {
                 if (true) //rs_indexB != -1
                 {
-                    for (int ivar = 1; ivar <= 4;ivar++ )
+                    for (int ivar = 1; ivar <= 4; ivar++)
                     {
-                        if ((Configuration.currentPlayerCountConfig == 2))
+                        if ((numOfPlayers == 2))
                         {
                             if (ivar == 3 || ivar == 4)
                             {
@@ -191,7 +205,7 @@ namespace pg_ludoleague
 
                             pathVars[ivar][mvar + 50].x = colorSpMovePath[ivar][mvar].Left;
                             pathVars[ivar][mvar + 50].y = colorSpMovePath[ivar][mvar].Top;
-                        }                       
+                        }
                     }
                     mvar++;
                 }
@@ -199,18 +213,18 @@ namespace pg_ludoleague
 
             pathVars[1][56].x = 310; pathVars[1][56].y = 330;
             pathVars[2][56].x = 250; pathVars[2][56].y = 290;
-            if ((Configuration.currentPlayerCountConfig == 4))
+            if ((numOfPlayers == 4))
             {
                 pathVars[3][56].x = 290; pathVars[3][56].y = 270;
                 pathVars[4][56].x = 350; pathVars[4][56].y = 310;
             }
 
-            for (int jvar = 1; jvar <= Configuration.currentPlayerCountConfig; jvar++)
+            for (int jvar = 1; jvar <= numOfPlayers; jvar++)
             {
-                BeadVars[jvar][1].BringToFront(); //TODO
+                beadBtnVars[jvar][1].BringToFront(); //TODO
             }
 
-            ROLL = initializeRoll();
+            diceRoll = initializeRoll();
             btnROLL.BackColor = Color.SkyBlue; //TODO
 
             //ovalShapes initialize
@@ -220,12 +234,15 @@ namespace pg_ludoleague
                 for (int jvar = 1; jvar <= 3; jvar++)
                 {
                     //plates[ivar, jvar] = new Button();
-                    os_indexVal = shapeContainer1.Shapes.IndexOfKey("ovalShape"+ ivar+ "" + jvar);
-                    OS[((ivar-1)*3) + jvar - 1] = (OvalShape)shapeContainer1.Shapes.get_Item(os_indexVal);
+                    os_indexVal = shapeContainer1.Shapes.IndexOfKey("ovalShape" + ivar + "" + jvar);
+                    diceBeads[((ivar - 1) * 3) + jvar - 1] = (OvalShape)shapeContainer1.Shapes.get_Item(os_indexVal);
                 }
             }
         }
 
+        /**
+         * Method to initialize the DICE ROLL
+         * */
         private int initializeRoll()
         {
             moveSequence[0] = new int();
@@ -234,107 +251,95 @@ namespace pg_ludoleague
             if (Configuration.firstMoveColorCode == 1)//Blue
             {
                 moveSequence = new int[] { 1, 3};
-                ROLL = 0;
+                diceRoll = 0;
             }
             if (Configuration.firstMoveColorCode == 3)//Green
             {
                 moveSequence = new int[] { 3, 1 };
-                ROLL = 0;
+                diceRoll = 0;
             }
-            return ROLL;
+            return diceRoll;
         }
 
+        /**
+         * Rolls the dice to next Player
+         * */
         private void rollNext()
         {
-            ROLL = (ROLL + 1) % 2;//TODO
-            textBox3.Text += "ROLL - " + ROLL + "\r\n";
-            
+            diceRoll = (diceRoll + 1) % numOfPlayers;
+            textBox3.Text += "ROLL - " + diceRoll + "\r\n";
         }
 
+        /**
+         * ACTION - dice button Click
+         * */
         private void btnRoll_Click(object sender, EventArgs e)
         {
             btnROLL.Enabled = false;
-            Q = new Random();
-            Val = Q.Next(1, 7);
-            textBox1.Text = Val.ToString();
+            diceValueRandomVar = new Random();
+            currentDiceValue = diceValueRandomVar.Next(1, 7);
+            textBox1.Text = currentDiceValue.ToString();
 
-            setdice(Val);
+            setdice(currentDiceValue);
 
-            switch (moveSequence[ROLL])
+            switch (moveSequence[diceRoll])
             {
                 case 1://blue to move
-                    textBox3.Text += "Blue to move, Val - " + Val + ",";
-                    disableBeadBtn(BeadVars[ROLL + 1]); //disable except this one
-                    if (fmove[moveSequence[ROLL]] == 0) //??-neverMovedTillNow
+                    textBox3.Text += "Blue to move, Val - " + currentDiceValue + ",";
+                    disableBeadBtn(beadBtnVars[diceRoll + 1]); //disable except this one
+                    if (fmove[moveSequence[diceRoll]] == 0) //??-neverMovedTillNow
                         {
                             //textBox3.Text += "Blue 1st move";
-                            //firstmoveblue(Val);
-                            firstMove(1, BeadVars[ROLL + 1], beadVars[ROLL + 1]);
+                            firstMove(1, beadBtnVars[diceRoll + 1], beadVars[diceRoll + 1]);
                             btnROLL.Enabled = true;
                         }
                         else
                         {
-                            if ((numbeadsopen[ROLL + 1] == 1) && (Val != 6)) // if only one bead open and val!=6 ..AutoMove
-                            { moveblue(Val); }
+                            if ((numbeadsopen[diceRoll + 1] == 1) && (currentDiceValue != 6)) // if only one bead open and val!=6 ..AutoMove
+                            { autoMoveBlue(currentDiceValue); }
                             else
                             {
-                                enableBeadBtns(Val, BeadVars[ROLL + 1], beadVars[ROLL + 1]);
-                                disableBeadBtn(BeadVars[ROLL + 1]);
+                                enableBeadBtns(currentDiceValue, beadBtnVars[diceRoll + 1], beadVars[diceRoll + 1]);
+                                disableBeadBtn(beadBtnVars[diceRoll + 1]);
                                 //indicate Blue Should be making a move now
-                                indicateNextColorToMove();
+                                //indicateNextColorToMove(); TODO
                             }
                         }
                     break;
                 case 3: //green to move
-                    textBox3.Text += "Green to move, Val - " + Val + ",";
-                    disableBeadBtn(BeadVars[ROLL + 1]);
-                    if (fmove[moveSequence[ROLL]] == 0)
+                    textBox3.Text += "Green to move, Val - " + currentDiceValue + ",";
+                    disableBeadBtn(beadBtnVars[diceRoll + 1]);
+                    if (fmove[moveSequence[diceRoll]] == 0)
                     {
                         //textBox3.Text += "Green 1st move";
-                        firstMove(3, BeadVars[ROLL + 1], beadVars[ROLL + 1]);
+                        firstMove(3, beadBtnVars[diceRoll + 1], beadVars[diceRoll + 1]);
                         btnROLL.Enabled = true;
 
                     }
                     else
                     {
-                        if ((numbeadsopen[ROLL + 1] == 1) && (Val != 6)) // ...Auto Move
-                        { movegreen(Val); }
+                        if ((numbeadsopen[diceRoll + 1] == 1) && (currentDiceValue != 6)) // ...Auto Move
+                        { movegreen(currentDiceValue); }
                         else
                         {
-                            enableBeadBtns(Val, BeadVars[ROLL + 1], beadVars[ROLL + 1]);
-                            disableBeadBtn(BeadVars[ROLL + 1]);
+                            enableBeadBtns(currentDiceValue, beadBtnVars[diceRoll + 1], beadVars[diceRoll + 1]);
+                            disableBeadBtn(beadBtnVars[diceRoll + 1]);
                             //indicate Green Should be making a move now
-                            indicateNextColorToMove();
+                            //indicateNextColorToMove(); TODO
                         }
                     }
                     break;
-                case 2: if (fmove[ROLL] == 0)
-                    {
-                        //firstmoveblue();
-                    }
-                    else
-                    {
-                        //moveBlue();
-                    }
-                    break;
-                case 4: if (fmove[ROLL] == 0)
-                    {
-                        //firstmoveblue();
-                    }
-                    else
-                    {
-                        //moveBlue();
-                    }
-                    break;
-
             }
 
 
         }
 
+        /**
+         * Method to disable all beads that should not be moving the current move
+         * */
         private void disableBeadBtn(Button[] button)
         {
-            foreach(Button[] btnA in BeadVars)
+            foreach(Button[] btnA in beadBtnVars)
             {
                 if (btnA != button && (btnA !=null))
                 {
@@ -346,28 +351,32 @@ namespace pg_ludoleague
             }
         }
 
-        private void indicateNextColorToMove()
+        //private void indicateNextColorToMove()
+        //{
+        //    switch (diceRoll)
+        //    {
+        //        case 1: rectangleShapeBorder.BorderColor = Color.SkyBlue;
+        //            rectangleShapeDice.BackColor = Color.DodgerBlue;
+
+        //            rectangleShapeGB.BorderColor = Color.ForestGreen;
+        //            rectangleShapeBB.BorderColor = Color.Black;
+        //            break;
+        //        case 3: 
+        //            rectangleShapeBorder.BorderColor = Color.Green;
+        //            rectangleShapeDice.BackColor = Color.ForestGreen;
+
+        //            rectangleShapeGB.BorderColor = Color.Black;
+        //            rectangleShapeBB.BorderColor = Color.DodgerBlue;
+        //            break;
+        //    }
+        //}
+
+        /**
+         * Method to enable all beads that can move the current move
+         * */
+        private void enableBeadBtns(int diceVal, Button[] beadBtns, Bead[] bBeadBtns)
         {
-            switch (ROLL)
-            {
-                case 1: rectangleShapeBorder.BorderColor = Color.SkyBlue;
-                    rectangleShapeDice.BackColor = Color.DodgerBlue;
-
-                    rectangleShapeGB.BorderColor = Color.ForestGreen;
-                    rectangleShapeBB.BorderColor = Color.Black;
-                    break;
-                case 3: 
-                    rectangleShapeBorder.BorderColor = Color.Green;
-                    rectangleShapeDice.BackColor = Color.ForestGreen;
-
-                    rectangleShapeGB.BorderColor = Color.Black;
-                    rectangleShapeBB.BorderColor = Color.DodgerBlue;
-                    break;
-            }
-        }
-
-        private void enableBeadBtns(int diceVal, Button[] beadBtns, bead[] bBeadBtns)
-        {
+            //Enable All, if dice says 6
             if (diceVal == 6)
             {
                 for (int i = 1; i <= 4; i++)
@@ -377,6 +386,7 @@ namespace pg_ludoleague
             }
             else
             {
+                //Enable only unlocked beads
                 for (int i = 1; i <= 4; i++)
                 {
                     if (bBeadBtns[i].status == 1)
@@ -392,11 +402,14 @@ namespace pg_ludoleague
             }
         }
 
+        /**
+         * Method to set DICE for current Value
+         * */
         private void setdice(int Val)
         {
             for (osl = 0; osl <= 8; osl++)
             {
-                OS[osl].BackColor = Color.Red;
+                diceBeads[osl].BackColor = Color.Red;
             }
             switch (Val){
                 case 1:
@@ -470,106 +483,122 @@ namespace pg_ludoleague
             }
             for (osl = 0; osl <= 8; osl++)
             {
-                if (OS[osl].BackColor == Color.Black)
+                if (diceBeads[osl].BackColor == Color.Black)
                 {
-                    OS[osl].Visible = false;
+                    diceBeads[osl].Visible = false;
                 }
             }
         }
 
-        private void resetdice()
-        {
-            ovalShape11.BackColor = Color.Black;
-            ovalShape12.BackColor = Color.Black;
-            ovalShape13.BackColor = Color.Black;
-            ovalShape21.BackColor = Color.Black;
-            ovalShape22.BackColor = Color.Black;
-            ovalShape23.BackColor = Color.Black;
-            ovalShape31.BackColor = Color.Black;
-            ovalShape32.BackColor = Color.Black;
-            ovalShape33.BackColor = Color.Black;
-        }
+        //private void resetdice()
+        //{
+        //    ovalShape11.BackColor = Color.Black;
+        //    ovalShape12.BackColor = Color.Black;
+        //    ovalShape13.BackColor = Color.Black;
+        //    ovalShape21.BackColor = Color.Black;
+        //    ovalShape22.BackColor = Color.Black;
+        //    ovalShape23.BackColor = Color.Black;
+        //    ovalShape31.BackColor = Color.Black;
+        //    ovalShape32.BackColor = Color.Black;
+        //    ovalShape33.BackColor = Color.Black;
+        //}
 
-        private void moveblue(int Val)
+        /**
+         * Method for Auto-Move for Blue colored Beads
+         **/
+        private void autoMoveBlue(int val)
         {
             textBox3.Text += "auto-move blue";
-            if (beadVars[ROLL + 1][1].status == 1) //beadVars[ROLL + 1]
+            if (beadVars[diceRoll + 1][1].status == 1) //beadVars[ROLL + 1]
             {
 
-                if ((beadVars[ROLL + 1][1].loc + Val) == 55)
+                if ((beadVars[diceRoll + 1][1].loc + val) == 55)
                 {
-                    if ((Val == 6) || (Val == 1))
+                    if ((val == 6) || (val == 1))
                     {
-                        beadVars[ROLL + 1][1].loc = beadVars[ROLL + 1][1].loc + 1;
-                        BeadVars[ROLL + 1][1].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].x; //pathVars[ROLL + 1]
-                        BeadVars[ROLL + 1][1].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].y;
+                        beadVars[diceRoll + 1][1].loc = beadVars[diceRoll + 1][1].loc + 1;
+                        beadBtnVars[diceRoll + 1][1].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].x; //pathVars[ROLL + 1]
+                        beadBtnVars[diceRoll + 1][1].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].y;
                         //ROLL = ROLL + 1;
                     }
                 }
-                else if (((beadVars[ROLL + 1][1].loc + Val) <= 56) && (Val != 6))
+                else if (((beadVars[diceRoll + 1][1].loc + val) <= 56) && (val != 6))
                 {
-                    beadVars[ROLL + 1][1].loc = beadVars[ROLL + 1][1].loc + Val;
-                    BeadVars[ROLL + 1][1].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].x;
-                    BeadVars[ROLL + 1][1].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].y;
-                    //ROLL = ROLL + 1;
+                    for (int mvar = 0; mvar < val; mvar++)
+                    {
+                        textBox3.Text += "TM" + (mvar+1);
+                        beadVars[diceRoll + 1][1].loc = beadVars[diceRoll + 1][1].loc + 1;
+                        beadBtnVars[diceRoll + 1][1].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].x;
+                        beadBtnVars[diceRoll + 1][1].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].y;
+                        for (long tvar = 0; tvar < 5000000L; tvar++) ;
+                        //Thread.Sleep(100);
+                    }
                 }
-                else if (((beadVars[ROLL + 1][1].loc + Val) <= 56) && (Val == 6))
+                else if (((beadVars[diceRoll + 1][1].loc + val) <= 56) && (val == 6))
                 {
-                    beadVars[ROLL + 1][1].loc = beadVars[ROLL + 1][1].loc + Val;
-                    BeadVars[ROLL + 1][1].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].x;
-                    BeadVars[ROLL + 1][1].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].y;
+                    beadVars[diceRoll + 1][1].loc = beadVars[diceRoll + 1][1].loc + val;
+                    beadBtnVars[diceRoll + 1][1].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].x;
+                    beadBtnVars[diceRoll + 1][1].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].y;
 
                 }
-                else if (((beadVars[ROLL + 1][1].loc + Val) > 56))
+                else if (((beadVars[diceRoll + 1][1].loc + val) > 56))
                 {
                     //ROLL = 2;
                 }
             }
             updateroll();
             unlock();
-            if (Val != 6)
+            if (val != 6)
             {
-                BeadVars[ROLL + 1][1].Enabled = false; BeadVars[ROLL + 1][2].Enabled = false; BeadVars[ROLL + 1][3].Enabled = false; BeadVars[ROLL + 1][4].Enabled = false;
+                beadBtnVars[diceRoll + 1][1].Enabled = false; beadBtnVars[diceRoll + 1][2].Enabled = false; beadBtnVars[diceRoll + 1][3].Enabled = false; beadBtnVars[diceRoll + 1][4].Enabled = false;
             }
         }
 
-        private void movegreen(int Val)
+        /**
+         * Method for Auto-Move for Green colored Beads
+         **/
+        private void movegreen(int val)
         {
             textBox3.Text += "auto-move green";
-            if (beadVars[ROLL + 1][1].status == 1)
-                if ((beadVars[ROLL + 1][1].loc + Val) == 55)
+            if (beadVars[diceRoll + 1][1].status == 1)
+                if ((beadVars[diceRoll + 1][1].loc + val) == 55)
                 {
-                    if ((Val == 6) || (Val == 1))
+                    if ((val == 6) || (val == 1))
                     {
-                        beadVars[ROLL + 1][1].loc = beadVars[ROLL + 1][1].loc + 1;
-                        BeadVars[ROLL + 1][1].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].x; //beadVars[ROLL + 1]
-                        BeadVars[ROLL + 1][1].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].y;
+                        beadVars[diceRoll + 1][1].loc = beadVars[diceRoll + 1][1].loc + 1;
+                        beadBtnVars[diceRoll + 1][1].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].x; //beadVars[ROLL + 1]
+                        beadBtnVars[diceRoll + 1][1].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].y;
                         //ROLL = ROLL + 1;
                     }
                 }
-                else if (((beadVars[ROLL + 1][1].loc + Val) <= 56) && (Val != 6))
+                else if (((beadVars[diceRoll + 1][1].loc + val) <= 56) && (val != 6))
                 {
-                    beadVars[ROLL + 1][1].loc = beadVars[ROLL + 1][1].loc + Val;
-                    BeadVars[ROLL + 1][1].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].x;
-                    BeadVars[ROLL + 1][1].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].y;
-                    //ROLL = 1;
+                    for (int mvar = 0; mvar < val; mvar++)
+                    {
+                        textBox3.Text += "TM" + (mvar + 1);
+                        beadVars[diceRoll + 1][1].loc = beadVars[diceRoll + 1][1].loc + 1;
+                        beadBtnVars[diceRoll + 1][1].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].x;
+                        beadBtnVars[diceRoll + 1][1].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].y;
+                        for (long tvar = 0; tvar < 5000000L; tvar++) ;
+                        //Thread.Sleep(100);
+                    }
                 }
-                else if (((beadVars[ROLL + 1][1].loc + Val) <= 56) && (Val == 6))
+                else if (((beadVars[diceRoll + 1][1].loc + val) <= 56) && (val == 6))
                 {
-                    beadVars[ROLL + 1][1].loc = beadVars[ROLL + 1][1].loc + Val;
-                    BeadVars[ROLL + 1][1].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].x;
-                    BeadVars[ROLL + 1][1].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][1].loc].y;
+                    beadVars[diceRoll + 1][1].loc = beadVars[diceRoll + 1][1].loc + val;
+                    beadBtnVars[diceRoll + 1][1].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].x;
+                    beadBtnVars[diceRoll + 1][1].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][1].loc].y;
 
                 }
-                else if (((beadVars[ROLL + 1][1].loc + Val) > 56))
+                else if (((beadVars[diceRoll + 1][1].loc + val) > 56))
                 {
                     //ROLL = 1;
                 }
             updateroll();
             unlock();
-            if (Val != 6)
+            if (val != 6)
             {
-                BeadVars[ROLL + 1][1].Enabled = false; BeadVars[ROLL + 1][2].Enabled = false; BeadVars[ROLL + 1][3].Enabled = false; BeadVars[ROLL + 1][4].Enabled = false;
+                beadBtnVars[diceRoll + 1][1].Enabled = false; beadBtnVars[diceRoll + 1][2].Enabled = false; beadBtnVars[diceRoll + 1][3].Enabled = false; beadBtnVars[diceRoll + 1][4].Enabled = false;
             }
         }
 
@@ -577,28 +606,16 @@ namespace pg_ludoleague
         private void updateroll()
         {
             rollNext();
-            textBox3.Text += "ms : " + moveSequence[ROLL] + ",";
-            if (moveSequence[ROLL] == 3)
+            textBox3.Text += "ms : " + moveSequence[diceRoll] + ",";
+            if (moveSequence[diceRoll] == 3)
             {
                 textBox2.Text = "Green";
                 btnROLL.BackColor = Color.Green;
-                //rectangleShapeBorder.BorderColor = Color.Green;
-                //rectangleShapeGB.BorderColor = Color.Black;
-                //rectangleShapeBB.BorderColor = Color.DodgerBlue;
-                //rectangleShapeDice.BackColor = Color.ForestGreen;
-
-
             }
-            else if (moveSequence[ROLL] == 1) //BLUE
+            else if (moveSequence[diceRoll] == 1) //BLUE
             {
                 textBox2.Text = "Blue";
                 btnROLL.BackColor = Color.SkyBlue;
-                //rectangleShapeBorder.BorderColor = Color.SkyBlue;
-                //rectangleShapeGB.BorderColor = Color.ForestGreen;
-                //rectangleShapeBB.BorderColor = Color.Black;
-                //rectangleShapeDice.BackColor = Color.DodgerBlue;
-
-
             }
         }
 
@@ -607,27 +624,27 @@ namespace pg_ludoleague
             btnROLL.Enabled = true;
             for (dr = 1; dr < 5; dr++)
             {
-                BeadVars[ROLL + 1][dr].Enabled = true;
-                BeadVars[ROLL + 1][dr].Enabled = true;
-                //R[dr].Enabled= false;
-                //Y[dr].Enabled = false;  
+                beadBtnVars[diceRoll + 1][dr].Enabled = true;
             }
         }
 
-        private void firstMove(int colourCode, Button[] beadBtns, bead[] BeadBtns) // to replace firstMove<Color>
+        /**
+         * Method for maving FIRST Move for any colored Bead
+         * */
+        private void firstMove(int colourCode, Button[] beadBtns, Bead[] BeadBtns) // to replace firstMove<Color>
         {
-            if ((Val == 6) || (Val == 1)) //Can open first bead
+            if ((currentDiceValue == 6) || (currentDiceValue == 1)) //Can open first bead
             {
                 textBox3.Text += "1st move";
-                fmove[moveSequence[ROLL]] = 1;
+                fmove[moveSequence[diceRoll]] = 1;
                 if (BeadBtns[1].status == 0)
                 {
                     BeadBtns[1].status = 1;
                     BeadBtns[1].loc = 1;
-                    beadBtns[1].Left = pathVars[ROLL + 1][BeadBtns[1].loc].x;
-                    beadBtns[1].Top = pathVars[ROLL + 1][BeadBtns[1].loc].y;
+                    beadBtns[1].Left = pathVars[diceRoll + 1][BeadBtns[1].loc].x;
+                    beadBtns[1].Top = pathVars[diceRoll + 1][BeadBtns[1].loc].y;
                     beadBtns[1].Enabled = true;
-                    numbeadsopen[ROLL + 1] = numbeadsopen[ROLL + 1] + 1; //TODO
+                    numbeadsopen[diceRoll + 1] = numbeadsopen[diceRoll + 1] + 1; //TODO
                 }
             }
             else
@@ -675,160 +692,77 @@ namespace pg_ludoleague
 
         private void performAction(int colourCode, int beadId)
         {
-            if (colourCode == 1) //Blue
+            if ((beadVars[diceRoll + 1][beadId].status == 1))
             {
-                if ((beadVars[ROLL + 1][beadId].status == 1)) //beadVars[ROLL + 1][beadId]
+                if ((beadVars[diceRoll + 1][beadId].loc + currentDiceValue) == 55)
                 {
-                    if ((beadVars[ROLL + 1][beadId].loc + Val) == 55)
+                    if ((currentDiceValue == 6) || (currentDiceValue == 1))
                     {
-                        if ((Val == 6) || (Val == 1))
-                        {
-                            beadVars[ROLL + 1][beadId].loc = beadVars[ROLL + 1][beadId].loc + 1;
-                            BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                            BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                            //ROLL = ROLL + 1;
-                            updateroll(); unlock();
-                        }
-                    }
-                    else if (((beadVars[ROLL + 1][beadId].loc + Val) <= 56) && (Val != 6))
-                    {
-                        beadVars[ROLL + 1][beadId].loc = beadVars[ROLL + 1][1].loc + Val;
-                        BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                        BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                        //ROLL = ROLL + 1;
-                        updateroll(); unlock();
-                    }
-                    else if (((beadVars[ROLL + 1][beadId].loc + Val) <= 56) && (Val == 6))
-                    {
-                        beadVars[ROLL + 1][beadId].loc = beadVars[ROLL + 1][beadId].loc + Val;
-                        BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                        BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                        updateroll(); unlock();
-                    }
-                    else if (((beadVars[ROLL + 1][beadId].loc + Val) > 56))
-                    {
-                        //ROLL = 2;
-                    }
-
-                    //User Has Moved
-                    //if Val was 6, then user has to roll dice again 
-                    //else change ROLL value to indicate the next player in line to Move
-                    if (Val == 6)
-                    {
-                        //doNothing, user will rerolldice
-                        disableBeadBtn(BeadVars[ROLL + 1]);
-                    }
-                    else
-                    {
-                        disableBeadBtn(BeadVars[ROLL + 1]);
+                        beadVars[diceRoll + 1][beadId].loc = beadVars[diceRoll + 1][beadId].loc + 1;
+                        beadBtnVars[diceRoll + 1][beadId].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].x;
+                        beadBtnVars[diceRoll + 1][beadId].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].y;
                         updateroll(); unlock();
                     }
                 }
-                else if (((beadVars[ROLL + 1][beadId].status == 0) && (beadVars[ROLL + 1][beadId].loc == -5)))
+                else if (((beadVars[diceRoll + 1][beadId].loc + currentDiceValue) <= 56) && (currentDiceValue != 6))
                 {
-                    if ((Val == 6) || (Val == 1)) //Can open first bead
-                    {
-                        textBox3.Text += "1st move";
-                        fmove[moveSequence[ROLL]] = 1;
-                        if (beadVars[ROLL + 1][beadId].status == 0)
-                        {
-                            beadVars[ROLL + 1][beadId].status = 1;
-                            beadVars[ROLL + 1][beadId].loc = 1;
-                            BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                            BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                            BeadVars[ROLL + 1][beadId].Enabled = true;
-                            numbeadsopen[ROLL + 1] = numbeadsopen[ROLL + 1] + 1; //TODO
-                        }
-                        //updateroll();
-                        unlock();
-                    }
-                    else
-                    {
-                        //Nothing should happen on click
-                    }
+                    beadVars[diceRoll + 1][beadId].loc = beadVars[diceRoll + 1][1].loc + currentDiceValue;
+                    beadBtnVars[diceRoll + 1][beadId].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].x;
+                    beadBtnVars[diceRoll + 1][beadId].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].y;
+                    updateroll(); unlock();
+                }
+                else if (((beadVars[diceRoll + 1][beadId].loc + currentDiceValue) <= 56) && (currentDiceValue == 6))
+                {
+                    beadVars[diceRoll + 1][beadId].loc = beadVars[diceRoll + 1][beadId].loc + currentDiceValue;
+                    beadBtnVars[diceRoll + 1][beadId].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].x;
+                    beadBtnVars[diceRoll + 1][beadId].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].y;
+                    updateroll(); unlock();
+                }
+                else if (((beadVars[diceRoll + 1][beadId].loc + currentDiceValue) > 56))
+                {
+                    //ROLL = 2;
+                }
+
+                //User Has Moved
+                //if Val was 6, then user has to roll dice again 
+                //else change ROLL value to indicate the next player in line to Move
+                if (currentDiceValue == 6)
+                {
+                    //doNothing, user will rerolldice
+                    disableBeadBtn(beadBtnVars[diceRoll + 1]);
+                }
+                else
+                {
+                    disableBeadBtn(beadBtnVars[diceRoll + 1]);
+                    updateroll(); unlock();
                 }
             }
-            else if (colourCode == 3) //Green
+            else if (((beadVars[diceRoll + 1][beadId].status == 0) && (beadVars[diceRoll + 1][beadId].loc == -5)))
             {
-                if ((beadVars[ROLL + 1][beadId].status == 1)) //beadVars[ROLL + 1][beadId]
+                if ((currentDiceValue == 6) || (currentDiceValue == 1)) //Can open first bead
                 {
-                    if ((beadVars[ROLL + 1][beadId].loc + Val) == 55)
+                    textBox3.Text += "1st move";
+                    fmove[moveSequence[diceRoll]] = 1;
+                    if (beadVars[diceRoll + 1][beadId].status == 0)
                     {
-                        if ((Val == 6) || (Val == 1))
-                        {
-                            beadVars[ROLL + 1][beadId].loc = beadVars[ROLL + 1][beadId].loc + 1;
-                            BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                            BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                            //ROLL = ROLL + 1;
-                            updateroll(); unlock();
-                        }
+                        beadVars[diceRoll + 1][beadId].status = 1;
+                        beadVars[diceRoll + 1][beadId].loc = 1;
+                        beadBtnVars[diceRoll + 1][beadId].Left = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].x;
+                        beadBtnVars[diceRoll + 1][beadId].Top = pathVars[diceRoll + 1][beadVars[diceRoll + 1][beadId].loc].y;
+                        beadBtnVars[diceRoll + 1][beadId].Enabled = true;
+                        numbeadsopen[diceRoll + 1] = numbeadsopen[diceRoll + 1] + 1; //TODO
                     }
-                    else if (((beadVars[ROLL + 1][beadId].loc + Val) <= 56) && (Val != 6))
-                    {
-                        beadVars[ROLL + 1][beadId].loc = beadVars[ROLL + 1][1].loc + Val;
-                        BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                        BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                        //ROLL = ROLL + 1;
-                        updateroll(); unlock();
-                    }
-                    else if (((beadVars[ROLL + 1][beadId].loc + Val) <= 56) && (Val == 6))
-                    {
-                        beadVars[ROLL + 1][beadId].loc = beadVars[ROLL + 1][beadId].loc + Val;
-                        BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                        BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                        updateroll(); unlock();
-                    }
-                    else if (((beadVars[ROLL + 1][beadId].loc + Val) > 56))
-                    {
-                        //ROLL = 2;
-                    }
-
-                    //User Has Moved
-                    //if Val was 6, then user has to roll dice again 
-                    //else change ROLL value to indicate the next player in line to Move
-                    if (Val == 6)
-                    {
-                        //doNothing, user will rerolldice
-                        disableBeadBtn(BeadVars[ROLL + 1]);
-                    }
-                    else
-                    {
-                        disableBeadBtn(BeadVars[ROLL + 1]);
-                        updateroll(); unlock();
-                    }
-                }
-                else if (((beadVars[ROLL + 1][beadId].status == 0) && (beadVars[ROLL + 1][beadId].loc == -5)))
-                {
-                    if ((Val == 6) || (Val == 1)) //Can open first bead
-                    {
-                        textBox3.Text += "1st move";
-                        fmove[moveSequence[ROLL]] = 1;
-                        if (beadVars[ROLL + 1][beadId].status == 0)
-                        {
-                            beadVars[ROLL + 1][beadId].status = 1;
-                            beadVars[ROLL + 1][beadId].loc = 1;
-                            BeadVars[ROLL + 1][beadId].Left = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].x;
-                            BeadVars[ROLL + 1][beadId].Top = pathVars[ROLL + 1][beadVars[ROLL + 1][beadId].loc].y;
-                            BeadVars[ROLL + 1][beadId].Enabled = true;
-                            numbeadsopen[ROLL + 1] = numbeadsopen[ROLL + 1] + 1; //TODO
-                        }
-                        //updateroll();
-                        unlock();
-                    }
-                    else
-                    {
-                        //Nothing should happen on click
-                    }
+                    unlock();
                 }
             }
         }
 
-        class path
+        class Path
         {
             public int x;
             public int y;
 
-            public path()
+            public Path()
             {
                 x = new int();
                 x = 0;
@@ -837,12 +771,12 @@ namespace pg_ludoleague
             }
         }
 
-        class bead
+        class Bead
         { 
             public int loc;
             public int status;
 
-            public bead()
+            public Bead()
             {
                 loc = -5;
                 status = 0;
